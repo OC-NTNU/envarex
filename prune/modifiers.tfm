@@ -1,0 +1,199 @@
+%*****************************************************************************
+%
+%    RESTRICTIVE MODIFIERS
+%
+%*****************************************************************************
+
+
+%=============================================================================
+% Prepositional Phrase Modifiers
+%=============================================================================
+
+% The probem with stripping modifiers is that Tsurgeon exhaustively
+% re-applies an operation on its own output. That means that a rule like
+% "Strip PP 1" immediately deletes *all* PPs in the tree. Hence we need rules
+% Strip PP 6 to Strip PP 2 -- in that order! -- to recursively strip PPs in a
+% bottom-up fashion.
+
+
+% Examples:
+%
+%  aboveground herbivory in grass phytometers exposed to all eight 
+%  combinations of climate change factors for three years
+%     === Strip PP 4 ===>
+%         aboveground herbivory in grass phytometers exposed to all eight 
+%         combinations of climate change factors
+%             === Strip PP 3 ===>
+%                 aboveground herbivory in grass phytometers exposed to 
+%                 all eight combinations
+%                     === Strip PP 2 ===>
+%                         aboveground herbivory in grass phytometers exposed
+%                             === Strip PP 1 ===>
+%                                 aboveground herbivory
+
+
+%-----------------------------------------------------------------------------
+$ Strip PP 6 $  
+%-----------------------------------------------------------------------------
+
+% Delete PP dominated by 5 other PPs, and not part of a coordination. 
+
+PP=pp >> (PP >> (PP >> (PP >> (PP >> PP)))) !$ CC|CONJP
+
+delete pp
+
+%-----------------------------------------------------------------------------
+$ Strip PP 5 $  
+%-----------------------------------------------------------------------------
+
+PP=pp >> (PP >> (PP >> (PP >> PP))) !$ CC|CONJP
+
+delete pp
+
+%-----------------------------------------------------------------------------
+$ Strip PP 4 $  
+%-----------------------------------------------------------------------------
+
+PP=pp >> (PP >> (PP >> PP)) !$ CC|CONJP
+
+delete pp
+
+%-----------------------------------------------------------------------------
+$ Strip PP 3 $  
+%-----------------------------------------------------------------------------
+
+PP=pp >> (PP >> PP) !$ CC|CONJP
+
+delete pp
+
+%-----------------------------------------------------------------------------
+$ Strip PP 2 $  
+%-----------------------------------------------------------------------------
+
+PP=pp >> PP !$ CC|CONJP
+
+delete pp
+
+%-----------------------------------------------------------------------------
+$ Strip PP 1 $  
+%-----------------------------------------------------------------------------
+
+PP=pp !$ CC|CONJP
+
+delete pp
+
+
+%=============================================================================
+% Sentence Modifiers
+%=============================================================================
+
+% Restrictive clause modifiers, not part of a coordination. 
+
+% Examples:
+%
+%  carbon to the atmosphere that could exacerbate climate change
+%     === Strip SBAR 1 ===>
+%         carbon to the atmosphere
+%
+% species that belong to families that include known coral pathogens 
+% ( Alteromonadaceae , Vibrionaceae ) , bacteria previously isolated from 
+% diseased , stressed or injured marine invertebrates ( for example , 
+% Rhodobacteraceae ) , and other species ( for example , Campylobacteraceae )
+%     === Strip SBAR 2 ===>
+%         species that belong to families
+%              === Strip SBAR 1 ===>
+
+%-----------------------------------------------------------------------------
+$ Strip SBAR 3 $  
+%-----------------------------------------------------------------------------
+
+SBAR=sbar >> (SBAR >> SBAR) !$ CC|CONJP !$, /^\W+/ 
+
+delete sbar
+
+%-----------------------------------------------------------------------------
+$ Strip SBAR 2 $  
+%-----------------------------------------------------------------------------
+
+SBAR=sbar >> SBAR !$ CC|CONJP !$, /^\W+/ 
+
+delete sbar
+
+%-----------------------------------------------------------------------------
+$ Strip SBAR 1 $  
+%-----------------------------------------------------------------------------
+
+SBAR=sbar !$ CC|CONJP !$, /^\W+/ 
+
+delete sbar
+
+
+%=============================================================================
+% Premodifiers
+%=============================================================================
+
+% Examples:
+%
+% the global ocean circulation
+%     === Strip Premodifier 3 ===>
+%         global ocean circulation
+%             === Strip Premodifier 2 ===>
+%                 ocean circulation
+%                     === Strip Premodifier 1 ===>
+%                         circulation
+
+
+
+% Stripping of premodifiers is rather course so far. One the problems is that
+% all modifiers in n-th position are stripped simultaneousy. E.g.
+%
+%  carbon export forced by climate warming
+%      === Strip Premodifier 1 ===>
+%          export forced by warming
+% 
+% fails to produce
+%
+% - export forced by climate warming
+% - carbon export forced by warming
+
+
+%-----------------------------------------------------------------------------
+$ Strip Premodifier 5 $  
+%-----------------------------------------------------------------------------
+
+NP <1 __=premod <# __=head <6 =head !< CC|CONJP
+
+delete premod
+
+
+%-----------------------------------------------------------------------------
+$ Strip Premodifier 4 $  
+%-----------------------------------------------------------------------------
+
+NP <1 __=premod <# __=head <5 =head !< CC|CONJP
+
+delete premod
+
+%-----------------------------------------------------------------------------
+$ Strip Premodifier 3 $  
+%-----------------------------------------------------------------------------
+
+NP <1 __=premod <# __=head <4 =head !< CC|CONJP
+
+delete premod
+
+%-----------------------------------------------------------------------------
+$ Strip Premodifier 2 $  
+%-----------------------------------------------------------------------------
+
+NP <1 __=premod <# __=head <3 =head !< CC|CONJP
+
+delete premod
+
+%-----------------------------------------------------------------------------
+$ Strip Premodifier 1 $  
+%-----------------------------------------------------------------------------
+
+NP <1 __=premod <# __=head <2 =head !< CC|CONJP
+
+delete premod

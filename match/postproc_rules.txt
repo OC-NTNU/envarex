@@ -1,0 +1,880 @@
+
+[rule ATTR1_modify]
+targets = ATTR1_modify
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Mm]odif(y|ies|ied|ying)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_fluctuate]
+targets = ATTR1_fluctuate
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ff]luctuat(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_change]
+targets = ATTR1_change
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Cc]hang(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_transform]
+targets = ATTR1_transform
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Tt]ransform(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_evolve]
+targets = ATTR1_evolve
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ev]olv(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_adjust]
+targets = ATTR1_adjust
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Aa]djust(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_shift]
+targets = ATTR1_shift
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ss]hift(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_modulate]
+targets = ATTR1_modulate
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Mm]odulat(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_adapt]
+targets = ATTR1_adapt
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Aa]dapt(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_mutate]
+targets = ATTR1_mutate
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Mm]utat(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_alter]
+targets = ATTR1_alter
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Aa]lter(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_vary]
+targets = ATTR1_vary
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Vv]ar(y|ies|ied|ying)$/) !$. PP
+script = delete d1
+
+[rule ATTR2_modify]
+targets = ATTR2_modify
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Mm]odif(y|ies|ied|ying)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_fluctuate]
+targets = ATTR2_fluctuate
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ff]luctuat(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_change]
+targets = ATTR2_change
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Cc]hang(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_transform]
+targets = ATTR2_transform
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Tt]ransform(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_evolve]
+targets = ATTR2_evolve
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ev]olv(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_adjust]
+targets = ATTR2_adjust
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Aa]djust(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_shift]
+targets = ATTR2_shift
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ss]hift(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_modulate]
+targets = ATTR2_modulate
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Mm]odulat(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_adapt]
+targets = ATTR2_adapt
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Aa]dapt(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_mutate]
+targets = ATTR2_mutate
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Mm]utat(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_alter]
+targets = ATTR2_alter
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Aa]lter(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_vary]
+targets = ATTR2_vary
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Vv]ar(y|ies|ied|ying)$/) $. PP)
+script = delete d1
+
+[rule NOM2_modify]
+targets = NOM2_modify
+pattern = NP < (NP <- (/NN/=d1 < /('^[Mm]odification(s)?$', 'in|of|to')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_fluctuate]
+targets = NOM2_fluctuate
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ff]luctuations?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_change]
+targets = NOM2_change
+pattern = NP < (NP <- (/NN/=d1 < /('^[Cc]hange(s)?', 'in|of|to')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_transform]
+targets = NOM2_transform
+pattern = NP < (NP <- (/NN/=d1 < /('^[Tt]ransformations?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_evolve]
+targets = NOM2_evolve
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ee]volution?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_adjust]
+targets = NOM2_adjust
+pattern = NP < (NP <- (/NN/=d1 < /('^[Aa]djustments?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_shift]
+targets = NOM2_shift
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ss]hifts?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_modulate]
+targets = NOM2_modulate
+pattern = NP < (NP <- (/NN/=d1 < /('^[Mm]odulations?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_adapt]
+targets = NOM2_adapt
+pattern = NP < (NP <- (/NN/=d1 < /('^[Aa]daptations?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_mutate]
+targets = NOM2_mutate
+pattern = NP < (NP <- (/NN/=d1 < /('^[Mm]utations?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_alter]
+targets = NOM2_alter
+pattern = NP < (NP <- (/NN/=d1 < /('^[Aa]lterations?$', 'in|of|to')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_vary]
+targets = NOM2_vary
+pattern = NP < (NP <- (/NN/=d1 < /('^[Vv]aria(tions?|nces?|bility|)$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM1_modify]
+targets = NOM1_modify
+pattern = NP <- (/NN/=d1 < /('^[Mm]odification(s)?$', 'in|of|to')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_fluctuate]
+targets = NOM1_fluctuate
+pattern = NP <- (/NN/=d1 < /('^[Ff]luctuations?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_change]
+targets = NOM1_change
+pattern = NP <- (/NN/=d1 < /('^[Cc]hange(s)?', 'in|of|to')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_transform]
+targets = NOM1_transform
+pattern = NP <- (/NN/=d1 < /('^[Tt]ransformations?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_evolve]
+targets = NOM1_evolve
+pattern = NP <- (/NN/=d1 < /('^[Ee]volution?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_adjust]
+targets = NOM1_adjust
+pattern = NP <- (/NN/=d1 < /('^[Aa]djustments?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_shift]
+targets = NOM1_shift
+pattern = NP <- (/NN/=d1 < /('^[Ss]hifts?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_modulate]
+targets = NOM1_modulate
+pattern = NP <- (/NN/=d1 < /('^[Mm]odulations?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_adapt]
+targets = NOM1_adapt
+pattern = NP <- (/NN/=d1 < /('^[Aa]daptations?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_mutate]
+targets = NOM1_mutate
+pattern = NP <- (/NN/=d1 < /('^[Mm]utations?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_alter]
+targets = NOM1_alter
+pattern = NP <- (/NN/=d1 < /('^[Aa]lterations?$', 'in|of|to')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_vary]
+targets = NOM1_vary
+pattern = NP <- (/NN/=d1 < /('^[Vv]aria(tions?|nces?|bility|)$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule ATTR1_elevate]
+targets = ATTR1_elevate
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ee]levat(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_enlarge]
+targets = ATTR1_enlarge
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ee]nlarg(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_raise]
+targets = ATTR1_raise
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Rr]ais(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_grow]
+targets = ATTR1_grow
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Gg](row|grows|rew|rown|rowing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_rise]
+targets = ATTR1_rise
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Rr](ise|ose|isen|ising)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_accumulate]
+targets = ATTR1_accumulate
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Aa]ccumulat(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_lengthen]
+targets = ATTR1_lengthen
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ll]nengthen(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_boost]
+targets = ATTR1_boost
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Bb]oost(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_triple]
+targets = ATTR1_triple
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Tt]ripl(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_augment]
+targets = ATTR1_augment
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Au]gment(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_enhance]
+targets = ATTR1_enhance
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ee]nhanc(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_heighten]
+targets = ATTR1_heighten
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Hh]eighten(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_gain]
+targets = ATTR1_gain
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Gg]ain(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_intensify]
+targets = ATTR1_intensify
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ii]ntensif(y|ies|ied|ying)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_increase]
+targets = ATTR1_increase
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ii]ncreas(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_expand]
+targets = ATTR1_expand
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ee]xpand(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_prolong]
+targets = ATTR1_prolong
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Pp]rolong(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_double]
+targets = ATTR1_double
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Dd]oubl(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_add]
+targets = ATTR1_add
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Aa]dd(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_strengthen]
+targets = ATTR1_strengthen
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ss]trengthen(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR2_elevate]
+targets = ATTR2_elevate
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ee]levat(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_enlarge]
+targets = ATTR2_enlarge
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ee]nlarg(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_raise]
+targets = ATTR2_raise
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Rr]ais(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_grow]
+targets = ATTR2_grow
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Gg](row|grows|rew|rown|rowing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_rise]
+targets = ATTR2_rise
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Rr](ise|ose|isen|ising)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_accumulate]
+targets = ATTR2_accumulate
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Aa]ccumulat(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_lengthen]
+targets = ATTR2_lengthen
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ll]nengthen(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_boost]
+targets = ATTR2_boost
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Bb]oost(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_triple]
+targets = ATTR2_triple
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Tt]ripl(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_augment]
+targets = ATTR2_augment
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Au]gment(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_enhance]
+targets = ATTR2_enhance
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ee]nhanc(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_heighten]
+targets = ATTR2_heighten
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Hh]eighten(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_gain]
+targets = ATTR2_gain
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Gg]ain(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_intensify]
+targets = ATTR2_intensify
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ii]ntensif(y|ies|ied|ying)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_increase]
+targets = ATTR2_increase
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ii]ncreas(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_expand]
+targets = ATTR2_expand
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ee]xpand(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_prolong]
+targets = ATTR2_prolong
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Pp]rolong(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_double]
+targets = ATTR2_double
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Dd]oubl(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_add]
+targets = ATTR2_add
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Aa]dd(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_strengthen]
+targets = ATTR2_strengthen
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ss]trengthen(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule NOM2_enlarge]
+targets = NOM2_enlarge
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ee]nlargements?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_raise]
+targets = NOM2_raise
+pattern = NP < (NP <- (/NN/=d1 < /('^[Rr]aises?$', 'in')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_boost]
+targets = NOM2_boost
+pattern = NP < (NP <- (/NN/=d1 < /('^[Bb]oosts?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_rise]
+targets = NOM2_rise
+pattern = NP < (NP <- (/NN/=d1 < /('^[Rr]ises?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_accumulate]
+targets = NOM2_accumulate
+pattern = NP < (NP <- (/NN/=d1 < /('^[Aa]ccumulations?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_increase]
+targets = NOM2_increase
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ii]ncreases?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_grow]
+targets = NOM2_grow
+pattern = NP < (NP <- (/NN/=d1 < /('^[Gg]rowths?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_augment]
+targets = NOM2_augment
+pattern = NP < (NP <- (/NN/=d1 < /('^[Aa]ugmentations?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_enhance]
+targets = NOM2_enhance
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ee]nhancements?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_gain]
+targets = NOM2_gain
+pattern = NP < (NP <- (/NN/=d1 < /('^[Gg]ains?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_expand]
+targets = NOM2_expand
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ee]xpansions?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_prolong]
+targets = NOM2_prolong
+pattern = NP < (NP <- (/NN/=d1 < /('^[Pp]rolongations?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_double]
+targets = NOM2_double
+pattern = NP < (NP <- (/NN/=d1 < /('^[Dd]oubles?$', 'in')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_add]
+targets = NOM2_add
+pattern = NP < (NP <- (/NN/=d1 < /('^[Aa]dditions?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM1_enlarge]
+targets = NOM1_enlarge
+pattern = NP <- (/NN/=d1 < /('^[Ee]nlargements?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_raise]
+targets = NOM1_raise
+pattern = NP <- (/NN/=d1 < /('^[Rr]aises?$', 'in')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_boost]
+targets = NOM1_boost
+pattern = NP <- (/NN/=d1 < /('^[Bb]oosts?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_rise]
+targets = NOM1_rise
+pattern = NP <- (/NN/=d1 < /('^[Rr]ises?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_accumulate]
+targets = NOM1_accumulate
+pattern = NP <- (/NN/=d1 < /('^[Aa]ccumulations?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_increase]
+targets = NOM1_increase
+pattern = NP <- (/NN/=d1 < /('^[Ii]ncreases?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_grow]
+targets = NOM1_grow
+pattern = NP <- (/NN/=d1 < /('^[Gg]rowths?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_augment]
+targets = NOM1_augment
+pattern = NP <- (/NN/=d1 < /('^[Aa]ugmentations?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_enhance]
+targets = NOM1_enhance
+pattern = NP <- (/NN/=d1 < /('^[Ee]nhancements?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_gain]
+targets = NOM1_gain
+pattern = NP <- (/NN/=d1 < /('^[Gg]ains?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_expand]
+targets = NOM1_expand
+pattern = NP <- (/NN/=d1 < /('^[Ee]xpansions?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_prolong]
+targets = NOM1_prolong
+pattern = NP <- (/NN/=d1 < /('^[Pp]rolongations?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_double]
+targets = NOM1_double
+pattern = NP <- (/NN/=d1 < /('^[Dd]oubles?$', 'in')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_add]
+targets = NOM1_add
+pattern = NP <- (/NN/=d1 < /('^[Aa]dditions?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule ATTR1_decrease]
+targets = ATTR1_decrease
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Dd]ecreas(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_decline]
+targets = ATTR1_decline
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Dd]eclin(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_shrink]
+targets = ATTR1_shrink
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ss](hrinks?|hrank|hrunk|hrunken|hrinking)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_deplete]
+targets = ATTR1_deplete
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Dd]eplet(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_minimize]
+targets = ATTR1_minimize
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Mm]inimiz(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_curb]
+targets = ATTR1_curb
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Cc]urb(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_lessen]
+targets = ATTR1_lessen
+pattern = NP < (VBN|VBD|VBG=d1 < /^[L]essen(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_diminish]
+targets = ATTR1_diminish
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Dd]iminish(es|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_mitigate]
+targets = ATTR1_mitigate
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Mm]itigat(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_cut]
+targets = ATTR1_cut
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Cc]ut(s|ting)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_export]
+targets = ATTR1_export
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ee]xport(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_reduce]
+targets = ATTR1_reduce
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Rr]educ(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_lower]
+targets = ATTR1_lower
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ll]ower(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_recede]
+targets = ATTR1_recede
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Rr]eced(e|es|ed|ing)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_fall]
+targets = ATTR1_fall
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ff](alls|ell|alling)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_exhaust]
+targets = ATTR1_exhaust
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Ee]xhaust(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR1_drop]
+targets = ATTR1_drop
+pattern = NP < (VBN|VBD|VBG=d1 < /^[Dd]rop(s|ped|ping)$/) !$. PP
+script = delete d1
+
+[rule ATTR1_limit]
+targets = ATTR1_limit
+pattern = NP < (VBN|VBD|VBG=d1 < /^[L]imit(s|ed|ing)?$/) !$. PP
+script = delete d1
+
+[rule ATTR2_decrease]
+targets = ATTR2_decrease
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Dd]ecreas(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_decline]
+targets = ATTR2_decline
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Dd]eclin(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_shrink]
+targets = ATTR2_shrink
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ss](hrinks?|hrank|hrunk|hrunken|hrinking)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_deplete]
+targets = ATTR2_deplete
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Dd]eplet(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_minimize]
+targets = ATTR2_minimize
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Mm]inimiz(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_curb]
+targets = ATTR2_curb
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Cc]urb(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_lessen]
+targets = ATTR2_lessen
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[L]essen(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_diminish]
+targets = ATTR2_diminish
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Dd]iminish(es|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_mitigate]
+targets = ATTR2_mitigate
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Mm]itigat(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_cut]
+targets = ATTR2_cut
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Cc]ut(s|ting)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_export]
+targets = ATTR2_export
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ee]xport(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_reduce]
+targets = ATTR2_reduce
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Rr]educ(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_lower]
+targets = ATTR2_lower
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ll]ower(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_recede]
+targets = ATTR2_recede
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Rr]eced(e|es|ed|ing)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_fall]
+targets = ATTR2_fall
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ff](alls|ell|alling)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_exhaust]
+targets = ATTR2_exhaust
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Ee]xhaust(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule ATTR2_drop]
+targets = ATTR2_drop
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[Dd]rop(s|ped|ping)$/) $. PP)
+script = delete d1
+
+[rule ATTR2_limit]
+targets = ATTR2_limit
+pattern = NP < (NP < (VBN|VBD|VBG=d1 < /^[L]imit(s|ed|ing)?$/) $. PP)
+script = delete d1
+
+[rule NOM2_decrease]
+targets = NOM2_decrease
+pattern = NP < (NP <- (/NN/=d1 < /('^[Dd]ecreases?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_decline]
+targets = NOM2_decline
+pattern = NP < (NP <- (/NN/=d1 < /('^[Dd]eclines?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_shrink]
+targets = NOM2_shrink
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ss]krinkages?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_deplete]
+targets = NOM2_deplete
+pattern = NP < (NP <- (/NN/=d1 < /('^[Dd]epletions?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_mitigate]
+targets = NOM2_mitigate
+pattern = NP < (NP <- (/NN/=d1 < /('^[Mm]itigations?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_export]
+targets = NOM2_export
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ee]xports?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_reduce]
+targets = NOM2_reduce
+pattern = NP < (NP <- (/NN/=d1 < /('^[Rr]eductions?$', 'in|of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_loss]
+targets = NOM2_loss
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ll]oss(es)?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_fall]
+targets = NOM2_fall
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ff]all$', 'in')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_limit]
+targets = NOM2_limit
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ll]imitations$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_drop]
+targets = NOM2_drop
+pattern = NP < (NP <- (/NN/=d1 < /('^[Dd]rops?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM2_exhaust]
+targets = NOM2_exhaust
+pattern = NP < (NP <- (/NN/=d1 < /('^[Ee]xhaustions?$', 'of')/ $ /NN/ )  $. PP)
+script = delete d1
+
+[rule NOM1_decrease]
+targets = NOM1_decrease
+pattern = NP <- (/NN/=d1 < /('^[Dd]ecreases?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_decline]
+targets = NOM1_decline
+pattern = NP <- (/NN/=d1 < /('^[Dd]eclines?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_shrink]
+targets = NOM1_shrink
+pattern = NP <- (/NN/=d1 < /('^[Ss]krinkages?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_deplete]
+targets = NOM1_deplete
+pattern = NP <- (/NN/=d1 < /('^[Dd]epletions?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_mitigate]
+targets = NOM1_mitigate
+pattern = NP <- (/NN/=d1 < /('^[Mm]itigations?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_export]
+targets = NOM1_export
+pattern = NP <- (/NN/=d1 < /('^[Ee]xports?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_reduce]
+targets = NOM1_reduce
+pattern = NP <- (/NN/=d1 < /('^[Rr]eductions?$', 'in|of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_loss]
+targets = NOM1_loss
+pattern = NP <- (/NN/=d1 < /('^[Ll]oss(es)?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_fall]
+targets = NOM1_fall
+pattern = NP <- (/NN/=d1 < /('^[Ff]all$', 'in')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_limit]
+targets = NOM1_limit
+pattern = NP <- (/NN/=d1 < /('^[Ll]imitations$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_drop]
+targets = NOM1_drop
+pattern = NP <- (/NN/=d1 < /('^[Dd]rops?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
+
+[rule NOM1_exhaust]
+targets = NOM1_exhaust
+pattern = NP <- (/NN/=d1 < /('^[Ee]xhaustions?$', 'of')/ $ /NN/ )  !$. PP
+script = delete d1
