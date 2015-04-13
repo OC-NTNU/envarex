@@ -7,13 +7,13 @@ from baleen.trans.trace import print_derivations
 org_matches_fname = "../match/nature_abs_matches_postproc.pkl"
 
 transform_fname = [
-#    "coordination.tfm",
+    "coordination.tfm",
     "parenthetical.tfm",
-#    "non-restrict.tfm",
-#    "modifiers.tfm"
+    "non-restrict.tfm",
+    "modifiers.tfm"
 ]
 
-jython_path = "/Users/work/local/src/stanford-tregex-2014-10-26/stanford-tregex.jar"
+jython_path = "/Users/work/local/src/stanford-corenlp-full-2015-01-29/stanford-corenlp-3.5.1.jar"
 
 trans_matches_fname = "nature_abs_matches_postproc_trans.pkl"
 
