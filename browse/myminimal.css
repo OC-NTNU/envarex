@@ -54,7 +54,7 @@ a:not([href]) { text-decoration: none; }
 
 h1 { font-size: 30px; line-height: 36px; margin-bottom: 20px; }
 h2 { font-size: 24px; line-height: 20px; margin-bottom: 20px; }
-h3 { font-size: 20px; line-height: 20px; margin-bottom: 20px; }
+h3 { font-size: 20px; line-height: 24px; margin-bottom: 20px; }
 h4 { font-size: 16px; line-height: 20px; margin-bottom: 20px; }
 h5 { font-size: 14px; line-height: 20px; margin-bottom: 20px; }
 h6 { font-size: 12px; line-height: 20px; margin-bottom: 20px; }
@@ -99,7 +99,7 @@ tfoot { font-style: italic; }
 th, td { background-color: #E8E8E8; padding: 7px; }
 
 /* Frame */
-iframe {color: #ccc; border: 1px; }
+iframe { border: 1px solid #ddd; }
 
 /* Print */
 @media print {
